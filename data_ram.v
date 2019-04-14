@@ -58,4 +58,3 @@ module data_ram(clk,write_en,bus,data_in,data_out,output_enable,data_enable,chip
 	
 	
 endmodule
-

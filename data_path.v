@@ -1,4 +1,3 @@
-
 module data_path(sel_d, ctrl, flagA, flagB,constant,clk, incr_en, merge_en, sel_c, d_RAM_en,ir_en,zero, great,out_statemachine,bus,sram_address,output_enable,data_enable,chip_en,UB,LB,check_a,mem_write_en);
 	input [2:0]  flagA, flagB;
 	input [3:0]  ctrl;
@@ -13,6 +12,7 @@ module data_path(sel_d, ctrl, flagA, flagB,constant,clk, incr_en, merge_en, sel_
 	output [15:0] check_a;
 	
 	wire en_r1,en_r2,en_r3,en_r4,en_r5,en_pc,en_dr,en_tr; //to write enable decorder
+
 	wire [15:0] im_out;
 	wire [15:0] busA, busB, rslt;
 	
@@ -22,7 +22,7 @@ module data_path(sel_d, ctrl, flagA, flagB,constant,clk, incr_en, merge_en, sel_
 	wire [19:0] address_d_RAM;
 	wire [3:0] most_sig_bits;
 	wire [15:0] instruction;
-	
+  
 	inout [15:0] bus;
 	output [19:0] sram_address;
 	output output_enable,data_enable,chip_en,UB,LB;
@@ -48,6 +48,7 @@ module data_path(sel_d, ctrl, flagA, flagB,constant,clk, incr_en, merge_en, sel_
 	
 	// 5 registers data path
 	registerR1 R1(.clk(clk),.en(en_r1),.c_in(c_in),.a_out(R1_a),.b_out(R1_b),.check_a(check_a));	// format: registerR5(clk,en,c_in,a_out,b_out);
+
 	registerR2 R2(.clk(clk),.en(en_r2),.c_in(c_in),.a_out(R2_a),.b_out(R2_b)); 
 	registerR3 R3(.clk(clk),.en(en_r3),.c_in(c_in),.a_out(R3_a),.b_out(R3_b)); 
 	registerR4 R4(.clk(clk),.en(en_r4),.c_in(c_in),.a_out(R4_a),.b_out(R4_b)); 

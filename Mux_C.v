@@ -1,3 +1,4 @@
+
 module Mux_C(constant, AC, sel, out);
 	input[15:0] constant, AC;
 	input sel;
@@ -12,5 +13,4 @@ module Mux_C(constant, AC, sel, out);
 				
 			endcase
 	end
-
 endmodule 

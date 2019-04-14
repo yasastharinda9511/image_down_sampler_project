@@ -6,7 +6,7 @@ module ALU(a, b, control, result, z, g);
 
 	always @(*)
 		begin 
-		 case(control)
+      case(control)
 			 4'd1: result = a + b;
 			 4'd2: result = a - b;
 			 4'd3: result = a*b;
@@ -16,7 +16,6 @@ module ALU(a, b, control, result, z, g);
 			 4'd7: result = a>>b;
 			 4'd8: result = a & b;
 			 4'd9: result = a | b; 
-			 
 			default:result = a + b; 
 		 endcase
 		end

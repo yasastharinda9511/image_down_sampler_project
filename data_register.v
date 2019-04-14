@@ -1,3 +1,4 @@
+
 module data_register(write_en,data_in,data_out,a_bus,b_bus,c_bus,least_sig,clk,mem_write_en);
 	input write_en,clk,mem_write_en;
 	reg [15:0] memory;

@@ -2,7 +2,7 @@ module registerR2(clk,en,c_in,a_out,b_out);
 	input clk, en;
 	input [15:0] c_in;
 	output [15:0] a_out, b_out;
-	reg [15:0] memory=16'b1;
+	reg [15:0] memory;
 	//reg [15:0] a_out, b_out;
 	always@(posedge clk)
 		begin

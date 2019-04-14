@@ -1,3 +1,4 @@
+
 module IRAM(address,word_out,clk);
 	input [15:0] address;
 	input clk;
@@ -56,5 +57,5 @@ endmodule
 				3'd4 : A_bus = R2;											  R2= 4'd4
 				3'd5 : A_bus = R3;											  R3= 4'd5
 				3'd6 : A_bus = R4;											  R4= 4'd6
-				3'd7 : A_bus = R5;                                   R5= 4'd7
-																					  TR= 4'd8 */
+				3'd7 : A_bus = R5;                        R5= 4'd7
+																					        TR= 4'd8 */
