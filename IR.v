@@ -3,8 +3,8 @@ module IR(en,word,instruction,clk);
 	output reg [15:0] word;
 	input [15:0] instruction;
 	input clk;
-	
-	always@(clk) begin
+
+	always@(posedge clk) begin
 		if(en) word=instruction;
 	end
 endmodule 

@@ -14,4 +14,6 @@ module registerR4(clk,en,c_in,a_out,b_out);
 
 	assign a_out = memory;
 	assign b_out = memory;
-endmodule 
+  
+endmodule
+

@@ -6,7 +6,7 @@ module programCounter(clk,en,incr_en,c_in,a_out,b_out,im_out);
 	always@(posedge clk)
 		begin
 			if (en) memory_counter=c_in;
-			if (incr_en) memory_counter=memory_counter+1;
+			if (incr_en) memory_counter=memory_counter+16'd1;
 				
 		end 
 		

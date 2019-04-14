@@ -1,20 +1,21 @@
 module ALU(a, b, control, result, z, g);
 	input [15:0] a, b;
-	input [2:0] control;
+	input [3:0] control;
 	output reg [15:0] result;
 	output z, g;
 
 	always @(*)
 		begin 
-		 case(control)
-			 3'b000: result = a + b;
-			 3'b001: result = a - b;
-			 3'b010: result = ~a;
-			 3'b011: result = a<<b;
-			 3'b100: result = a>>b;
-			 3'b101: result = a & b;
-			 3'b110: result = a | b; 
-		 
+      case(control)
+			 4'd1: result = a + b;
+			 4'd2: result = a - b;
+			 4'd3: result = a*b;
+			 4'd4: result =a/b;
+			 4'd5: result = ~a;
+			 4'd6: result = a<<b;
+			 4'd7: result = a>>b;
+			 4'd8: result = a & b;
+			 4'd9: result = a | b; 
 			default:result = a + b; 
 		 endcase
 		end
