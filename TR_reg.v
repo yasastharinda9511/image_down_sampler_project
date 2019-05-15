@@ -4,6 +4,6 @@ module TR_reg(most_sig,write_en,c_bus,clk);
 	input [15:0] c_bus;
 	always@(posedge clk)
 		begin
-			if(write_en) most_sig=c_bus[3:0];
+			if(write_en) most_sig=c_bus[15:12];
 		end
 endmodule
