@@ -1,4 +1,3 @@
-
 module IRAM(address,word_out,clk);
 	input [15:0] address;
 	input clk;
@@ -94,7 +93,7 @@ module IRAM(address,word_out,clk);
 
 			
 			// downsampling algorithm
-			/*memory[0]={CONSTANT2REG,C_R1,DCC};//	R1=257         INTIALIZE
+			memory[0]={CONSTANT2REG,C_R1,DCC};//	R1=257         INTIALIZE
 			memory[1]=16'd257;
 			
 			memory[2]={CONSTANT2REG,C_R4,DCC};//	R4=0			 INTIALIZE
@@ -463,18 +462,22 @@ module IRAM(address,word_out,clk);
 			
 			memory[260]={MEM_WRITE,DCWR}; // NEW CALCULATED VALUE WRITE
 			//////////////////////////////FINISH//////////////////////////////////////
-			memory[261]={OVER,DCWR};*/
+			memory[261]={OVER,DCWR};
 			
 			//////////////////////////end of algorithm///////////////////////////
 			
-			memory[0]={CONSTANT2REG,C_TR,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
-			memory[1]={4'd0,DCTR};
+			/////////////////////////////////uart testing/////////////////////////////////////////////
+		
 			
-			memory[2]={CONSTANT2REG,C_R2,DCC};
+			
+			/*memory[0]={CONSTANT2REG,C_R2,DCC};
+			memory[1]=16'd0;
+			
+			memory[2]={CONSTANT2REG,C_R3,DCC};
 			memory[3]=16'd0;
 			
-			memory[4]={CONSTANT2REG,C_R3,DCC};
-			memory[5]=16'd2;
+			memory[4]={CONSTANT2REG,C_TR,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
+			memory[5]={4'd0,DCTR};
 			
 			memory[6]={CONSTANT2REG,C_R5,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
 			memory[7]= 16'd0;
@@ -488,19 +491,35 @@ module IRAM(address,word_out,clk);
 			
 			memory[12]={ADD,R3,DR,C_DR};
 			
-			memory[13]={MEM_WRITE,DCWR};
+			memory[13]={CONSTANT2REG,C_R5,DCC};//	R5=255
+			memory[14]=16'd255;
 			
-			memory[14]={CONSTANT2REG,C_R5,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
-			memory[15]= 16'd1;
+			memory[15]={JUMPG,R5,DR,C_NO_DEST}; //IF !(R5<R2) GOTO LINE 186 ELSE LINE 184
+			memory[16]=16'd19;// NUMBER XXXXXXXXXXXXXXX *********
 			
-			memory[16]={ADD,R2,R5,C_R2};
+			memory[17]={CONSTANT2REG,C_DR,DCC};//	R2=255
+			memory[18]=16'd0;
 			
-			memory[17]={CONSTANT2REG,C_R5,DCC};//	R5=65535
-			memory[18]=16'd10;
-			memory[19]={NJUMPZ,R5,R2,C_NO_DEST};// IF(R1!=R5) GOTO 
-			memory[20]=16'd6;
+			memory[19]={CONSTANT2REG,C_TR,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
+			memory[20]={4'd1,DCTR};
 			
-			memory[21]={OVER,DCWR};
+			memory[21]={MERGE,DCWR};
+			
+			memory[22]={MEM_WRITE,DCWR};
+			
+			memory[23]={CONSTANT2REG,C_R5,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
+			memory[24]= 16'd1;
+			
+			memory[25]={ADD,R2,R5,C_R2};
+			
+			memory[26]={CONSTANT2REG,C_R5,DCC};//	R5=65535
+			memory[27]=16'd65536;
+			memory[28]={NJUMPZ,R5,R2,C_NO_DEST};// IF(R1!=R5) GOTO 
+			memory[29]=16'd4;
+			
+			memory[30]={OVER,DCWR};*/
+			
+			/////////////////////////////////end of uart testing/////////////////////////////////////////////
 			
 			/*memory[0]={4'd0,DCTR};	
 			memory[1]={CONSTANT2REG,C_DR,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
@@ -521,6 +540,81 @@ module IRAM(address,word_out,clk);
 			
 			memory[12]={ADD,R1,DR,C_R1};// R2=R2+DR
 			memory[13]={OVER,DCWR};*/
+			
+			
+			
+			/*memory[0]={CONSTANT2REG,C_R1,DCC};//	R1=257         INTIALIZE
+			memory[1]=16'd257;
+			
+			memory[2]={CONSTANT2REG,C_R4,DCC};//	R4=0			 INTIALIZE
+			memory[3]=16'd0;
+			
+			memory[4]={CONSTANT2REG,C_TR,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
+			memory[5]={4'd1,DCTR};				  // TR=4'd1
+			memory[6]={CONSTANT2REG,C_DR,DCC}; // DR=16'D65335
+			memory[7]=16'd65535;
+			memory[8]={MERGE,DCWR};			  //AR=TR,DR (AR=20'b00011111111111111111)
+			memory[9]={CONSTANT2REG,C_DR,DCC};//DR=0 (COUNT VALUE)
+			memory[10]= 16'd0;
+			memory[11]={MEM_WRITE,DCWR}; // DR=COUNT
+			
+			memory[12]={CONSTANT2REG,C_R2,DCC};//	R2=0 (SUMMING VARIABLE)INTIALIZE		STATRT OF THE LOOP RELATED TO THE 0-65281 PIXELS      ******************* NUMBER 5
+			memory[13]=16'd0;
+			
+			memory[14]={CONSTANT2REG,C_TR,DCC}; // count = 0 //MEMORY LOCATION:20'b00011111111111111111  INTIALIZE
+			memory[15]={4'd0,DCTR};
+			memory[16]={CONSTANT2REG,C_R3,DCC};//	R3=0 		**number 2
+			memory[17]=16'd0;
+			memory[18]={ADD,R1,R3,C_DR};//DR=R1+R3 
+			memory[19]={MERGE,DCWR}; // AR=TR,DR
+			memory[20]={MEM_READ,DCWR}; // DR=MEMORY[AR]
+			memory[21]={ADD,R2,DR,C_R2}; //R2=R2+DR
+			
+			memory[22]={CONSTANT2REG,C_TR,DCC};//  TR=0 NUMBER XXXXXXXXXXXXXX *******
+			memory[23]={4'd0,DCTR};
+			
+			memory[24]={CONSTANT2REG,C_R5,DCC};//	R5=0
+			memory[25]=16'd0;
+			memory[26]={ADD,R4,R5,C_DR}; // DR=R4+R5
+			memory[27]={MERGE,DCWR};//AR=TR,DR
+			memory[28]={ADD,R2,R5,C_DR};
+			
+			memory[29]={MEM_WRITE,DCWR}; // NEW CALCULATED VALUE WRITE
+			
+			memory[30]={CONSTANT2REG,C_R5,DCC};//	R5=1 TO INCREMENT R4 BY 1
+			memory[31]=16'd1;
+			
+			memory[32]={ADD,R4,R5,C_R4};
+			
+			memory[33]={CONSTANT2REG,C_TR,DCC}; //count read from memory
+			memory[34]={4'd1,DCTR}; // TR=1
+			memory[35]={CONSTANT2REG,C_DR,DCC};//DR=65535
+			memory[36]=16'd65535;
+			memory[37]={MERGE,DCWR};// AR=TR,DR
+			memory[38]={MEM_READ,DCWR}; // DR=MEMORY[AR] (DR=COUNT)
+			
+			memory[39]={CONSTANT2REG,C_R5,DCC};//	R5=128
+			memory[40]=16'd128;
+			
+			memory[41]={NJUMPZ,DR,R5,C_NO_DEST}; // IF(R5=!DR) GOTO LINE 126 ELSE GOTO LINE 118 (RELATED TO THE ONE RAW SKIP)
+			memory[42]=16'd49;// ** number4
+			memory[43]={CONSTANT2REG,C_R5,DCC}; // R5=256
+			memory[44]=16'd256;
+			memory[45]={ADD,R1,R5,C_R1}; // R1=R1+DR (R1=R1+256)
+			memory[46]={CONSTANT2REG,C_DR,DCC}; // DR=0 (TO COUNT RESET)
+			memory[47]=16'd0;
+			memory[48]={MEM_WRITE,DCWR}; // COUNT=0
+			
+			memory[49]={CONSTANT2REG,C_R5,DCC};//	R5=2 // ** number4
+			memory[50]=16'd2;
+			memory[51]={ADD,R1,R5,C_R1};// R1=R1+R5 (R1=R1+2)
+			
+			memory[52]={CONSTANT2REG,C_R5,DCC};//	R5=65535
+			memory[53]=16'd65535;
+			memory[54]={NJUMPZ,R5,R1,C_NO_DEST};// IF(R1!=R5) GOTO 
+			memory[55]=16'd12; ///NUMBER 6YYYYYYYYYYYYYYYYYYYYY
+			
+			memory[56]={OVER,DCWR};*/
 		end
 	assign word_out=memory[address];
 endmodule
