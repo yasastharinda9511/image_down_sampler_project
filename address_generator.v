@@ -16,7 +16,9 @@ module address_uart_generator(s_tick,address_uart,recieving,recieve_over,recieve
 	
 	parameter write=2'b11, read=2'b00, h_imp = 2'd10;
 	
-	output reg [7:0] rx_check=8'd0;
+	parameter end_of_original_image=20'd65535 , begining_of_sampled_image= 20'd65536, end_of_sampled_image = 20'd81919;
+	
+	output  [7:0] rx_check;
 	
 	always@(posedge s_tick)
 		begin
@@ -47,9 +49,9 @@ module address_uart_generator(s_tick,address_uart,recieving,recieve_over,recieve
 							begin
 								write_en_uart= h_imp;
 								uart_en =1'b0;
-								if(address_uart==20'd25)
+								if(address_uart==end_of_original_image)// end of the image address
 									begin
-										rx_check=8'd100;
+										//rx_check=8'd100;
 										state=over_rx;
 									end
 								else
@@ -71,9 +73,9 @@ module address_uart_generator(s_tick,address_uart,recieving,recieve_over,recieve
 					begin
 						if(finish)  
 							begin// finish ctr signal is from state machine
-								address_uart=20'd0;
+								address_uart=begining_of_sampled_image; // begining of the new down sampled image memory location
 								state=idle2_tx;
-								rx_check=8'd255;
+								//rx_check=8'd255;
 							end
 					end
 				idle2_tx:
@@ -81,12 +83,12 @@ module address_uart_generator(s_tick,address_uart,recieving,recieve_over,recieve
 						state= read_state;
 						write_en_uart=read;
 						uart_en =1'b1;
-						rx_check=8'd25;
+						//rx_check=8'd25;
 					end
 				read_state:
 					begin
 						state= transmit_start;
-						rx_check=8'd28;
+						//rx_check=8'd28;
 					end
 				transmit_start:
 					begin
@@ -110,7 +112,7 @@ module address_uart_generator(s_tick,address_uart,recieving,recieve_over,recieve
 						uart_en =1'b0;
 						if(transmit_over)
 							begin
-								if(address_uart==20'd25)
+								if(address_uart==end_of_sampled_image)// end of the new down sampled image memory location
 									begin
 										state=over_tx;
 									end
@@ -131,5 +133,7 @@ module address_uart_generator(s_tick,address_uart,recieving,recieve_over,recieve
 					state=idle_rx;
 			endcase
 	end
+	
+	assign rx_check=address_uart[7:0];
 	
 endmodule
