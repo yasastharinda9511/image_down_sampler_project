@@ -20,20 +20,24 @@
 
 #  Instructions
 
+****[x : y]: Ignore x to y bits 
+
 |Instruction|Opcode|Size|ISA|Description|
 |----|-----|-----|------|-------|
 |ADD|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
 |SUB|```0b000010```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA-RB|
-|MUL|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|DIV|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|NOT|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|LEFT_SHIF|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|RIGHT_SHIFT|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|BIT_AND|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|BIT_OR|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|CONST2REG|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|MEM_WRITE|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|MEM_READ|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|JUMPZ|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|NJUMPZ|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|OVER|```0b000001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+|MUL|```0b000011```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA*RB|
+|DIV|```0b0000100```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA/RB|
+|NOT|```0b0000101```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/****[6:4]/destination_C_bus[3:0]```|Rc<---~RA|
+|LEFT_SHIFT|```0b000110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA<<RB|
+|RIGHT_SHIFT|```0b000111```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA>>RB|
+|BIT_AND|```0b001000```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA&RB|
+|BIT_OR|```0b001001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA|RB|
+|CONST2REG|```0b001010```|32 bit|```opcode[31:26]/src_C_Bus[25:22]/****[22:16]/Value[15:0]```|Rc<---Value|
+|MEM_WRITE|```0b001011```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+|MEM_READ|```0b001100```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+|JUMPZ|```0b001101```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+|NJUMPZ|```0b001110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+|OVER|```0b001111```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+
+# Sample Outputs
