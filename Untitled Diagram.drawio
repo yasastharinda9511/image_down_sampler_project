@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-11-16T16:50:52.997Z" agent="5.0 (Windows)" etag="KRkkgr7QA7gddu43p1xy" version="13.9.9" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-16T16:53:10.925Z" agent="5.0 (Windows)" etag="TzImVIBMZAOQ7Vft_ilA" version="13.9.9" type="github">
   <diagram id="3uHAgpnk4Gxe2bnCt2p7" name="Page-1">
-    <mxGraphModel dx="5250" dy="309" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+    <mxGraphModel dx="5494" dy="442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1043,7 +1043,7 @@
         <mxCell id="DPOnL2VAeJX04uS6cf8m-258" value="Increment" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="155" y="630" width="70" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="DPOnL2VAeJX04uS6cf8m-259" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;exitX=1.018;exitY=0.54;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DPOnL2VAeJX04uS6cf8m-23" target="DPOnL2VAeJX04uS6cf8m-3">
+        <mxCell id="DPOnL2VAeJX04uS6cf8m-259" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;exitX=1.003;exitY=0.541;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DPOnL2VAeJX04uS6cf8m-23" target="DPOnL2VAeJX04uS6cf8m-3">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="480" y="580" as="sourcePoint" />
             <mxPoint x="530" y="530" as="targetPoint" />
@@ -1093,7 +1093,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="DPOnL2VAeJX04uS6cf8m-267" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;exitX=0.004;exitY=0.073;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="DPOnL2VAeJX04uS6cf8m-14">
+        <mxCell id="DPOnL2VAeJX04uS6cf8m-267" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;exitX=-0.008;exitY=0.038;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="DPOnL2VAeJX04uS6cf8m-14">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1990" y="653" as="sourcePoint" />
             <mxPoint x="1660" y="90" as="targetPoint" />
@@ -1103,6 +1103,9 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1660" y="1320" as="sourcePoint" />
             <mxPoint x="1710" y="1270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1870" y="1120" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="DPOnL2VAeJX04uS6cf8m-269" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;" edge="1" parent="1">
@@ -1119,13 +1122,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DPOnL2VAeJX04uS6cf8m-270" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;entryX=-0.002;entryY=0.466;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="DPOnL2VAeJX04uS6cf8m-14">
+        <mxCell id="DPOnL2VAeJX04uS6cf8m-270" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1635" y="1310" as="sourcePoint" />
-            <mxPoint x="1970" y="769.9999999999998" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1990" y="790" />
-            </Array>
+            <mxPoint x="1994" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="DPOnL2VAeJX04uS6cf8m-271" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;" edge="1" parent="1">
@@ -1201,6 +1201,11 @@
               <mxPoint x="1120" y="160" />
               <mxPoint x="1720" y="270" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DPOnL2VAeJX04uS6cf8m-288" value="DRAM_write_en" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DPOnL2VAeJX04uS6cf8m-287">
+          <mxGeometry x="0.9279" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
