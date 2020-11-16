@@ -41,3 +41,10 @@
 |OVER|```0b001111```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
 
 # Sample Outputs
+
+## OUTPUT_1
+
+![Screenshot (73)](https://user-images.githubusercontent.com/37435024/99291223-76827080-2865-11eb-954d-ac13c843ae90.png)
+
+## OUTPUT_2
+
