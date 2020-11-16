@@ -31,14 +31,14 @@
 |NOT|```0b0000101```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/****[6:4]/destination_C_bus[3:0]```|Rc<---~RA|
 |LEFT_SHIFT|```0b000110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA<<RB|
 |RIGHT_SHIFT|```0b000111```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA>>RB|
-|BIT_AND|```0b001000```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA&RB|
-|BIT_OR|```0b001001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA|RB|
+|BIT_AND|```0b001000```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA & RB|
+|BIT_OR|```0b001001```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA OR RB|
 |CONST2REG|```0b001010```|32 bit|```opcode[31:26]/src_C_Bus[25:22]/****[22:16]/Value[15:0]```|Rc<---Value|
-|MEM_WRITE|```0b001011```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|MEM_READ|```0b001100```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|JUMPZ|```0b001101```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|NJUMPZ|```0b001110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
-|OVER|```0b001111```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|Rc<---RA+RB|
+|MEM_WRITE|```0b001011```|16 bit|```opcode[15:10]/****[9:0]```|DR---->M[AR]|
+|MEM_READ|```0b001100```|16 bit|```opcode[15:10]/****[9:0]```|DR<---M[AR]|
+|JUMPZ|```0b001101```|32 bit|```opcode[31:26]/****[9:0]/WHERE_TO_JUMP[15:0]```|(z==1)? PC<--WHERE_TO_JUMP[15:0] : PC=PC+1 |
+|NJUMPZ|```0b001110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|(z==0)=PC<--WHERE_TO_JUMP[15:0] ? PC=PC+1|
+|OVER|```0b001111```|16 bit|```opcode[15:10]/****[9:0]```|Indicates Code is over|
 
 # Sample Outputs
 
@@ -47,4 +47,8 @@
 ![Screenshot (73)](https://user-images.githubusercontent.com/37435024/99291223-76827080-2865-11eb-954d-ac13c843ae90.png)
 
 ## OUTPUT_2
+
+![Screenshot (74)](https://user-images.githubusercontent.com/37435024/99291542-ff011100-2865-11eb-9ce4-21b82b72f0e3.png)
+
+
 
