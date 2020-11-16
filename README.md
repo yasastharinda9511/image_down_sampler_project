@@ -37,7 +37,7 @@
 |MEM_WRITE|```0b001011```|16 bit|```opcode[15:10]/****[9:0]```|DR---->M[AR]|
 |MEM_READ|```0b001100```|16 bit|```opcode[15:10]/****[9:0]```|DR<---M[AR]|
 |JUMPZ|```0b001101```|32 bit|```opcode[31:26]/****[9:0]/WHERE_TO_JUMP[15:0]```|(z==1)? PC<--WHERE_TO_JUMP[15:0] : PC=PC+1 |
-|NJUMPZ|```0b001110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|(z==0)=PC<--WHERE_TO_JUMP[15:0] ? PC=PC+1|
+|NJUMPZ|```0b001110```|16 bit|```opcode[15:10]/src_A_Bus[9:7]/src_B_bus[6:4]/destination_C_bus[3:0]```|(z==0)?PC<--WHERE_TO_JUMP[15:0] : PC=PC+1|
 |OVER|```0b001111```|16 bit|```opcode[15:10]/****[9:0]```|Indicates Code is over|
 
 # Sample Outputs
