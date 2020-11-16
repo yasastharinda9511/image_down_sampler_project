@@ -50,5 +50,11 @@
 
 ![Screenshot (74)](https://user-images.githubusercontent.com/37435024/99291542-ff011100-2865-11eb-9ce4-21b82b72f0e3.png)
 
+## Algorithm
+
+This [link](https://www.google.com/search?client=firefox-b-d&q=gaussian+filter+for+image+processing) provides how Gaussian Filters suitable for this down sample process
+
+[Our implementation of gaussian filter using this custom ISA](https://github.com/yasastharinda9511/image_down_sampler_project/blob/master/IRAM.v)
+
 
 
