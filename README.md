@@ -52,6 +52,7 @@
 
 ## Algorithm
 
+Gaussian Kernel is used.
 ![YAsas123](https://user-images.githubusercontent.com/37435024/101189439-0fdebe80-367d-11eb-8363-2ac306d62bbc.jpg)
 
 This [link](https://www.google.com/search?client=firefox-b-d&q=gaussian+filter+for+image+processing) provides how Gaussian Filters suitable for this down sample process
